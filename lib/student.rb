@@ -59,7 +59,11 @@ class Student < ActiveRecord::Base
 
   
 
+<<<<<<< HEAD
     def all_students_from_my_module(mod_num, course)
+=======
+    def all_students_form_my_module(mod_num, course)
+>>>>>>> 31d41aed504831ded9938532cf0af94b67d452de
     # Student instance method - all of the students in my module and course
     mod = Student.all.where(course: course, module: mod_num) 
     mod.each{|std| puts "name: " +std.name + " email: " + std.email + " module: " + std.module.to_s}
