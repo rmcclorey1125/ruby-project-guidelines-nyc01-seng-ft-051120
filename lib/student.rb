@@ -35,11 +35,17 @@ class Student < ActiveRecord::Base
         end
         self.save
     end
-    # Student instance method - all of the students from my course
+    
 
-    def all_studensts_
+    def all_students_from_my_course(course)
+        # Student instance method - all of the students from my course
+        all_std = Student.all.where(course: course)
+        #  binding.pry
+        all_std.each{|std| puts "name: " +std.name + " email: " + std.email + " module: " + std.module.to_s}
+        # all_std.map{|std| puts std.name + std.email + std.module.to_s }
     end
 
+<<<<<<< HEAD
       # def self.num_of_students(mod)
     #     Student.all.select do |student|
     #         student.module == mod
@@ -54,4 +60,11 @@ class Student < ActiveRecord::Base
 
   
 
+=======
+    def all_students_form_my_module(mod_num, course)
+    # Student instance method - all of the students in my module and course
+    mod = Student.all.where(course: course, module: mod_num) 
+    mod.each{|std| puts "name: " +std.name + " email: " + std.email + " module: " + std.module.to_s}
+    end
+>>>>>>> e854637a4583a2919a45965addf9b7c8cb726768
 end
