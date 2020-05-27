@@ -10,9 +10,9 @@ class Student < ActiveRecord::Base
                 my_teachers << b.teacher
                 end
         end
-        my_teachers.map do |t|
-            t.name
-        end.uniq
+        my_teachers.uniq     #map do |t|
+        #     t.name
+        # end.uniq
     end
 
     def self.job_seeking
@@ -35,6 +35,9 @@ class Student < ActiveRecord::Base
         end
         self.save
     end
+    # Student instance method - all of the students from my course
 
+    def all_studensts_
+    end
 
 end
