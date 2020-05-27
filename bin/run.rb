@@ -9,6 +9,7 @@ class CommandLineInterface
 cli = CommandLineInterface.new
 cli.greet
 cli.who_am_i
-# cli.
+cli.
 
-end
+
+all_students_from_my_course("Software Engineering")
