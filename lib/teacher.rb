@@ -21,4 +21,22 @@ class Teacher < ActiveRecord::Base
         end
     end
 
+    def self.get_teacher_emails_by_course(course)
+        Teacher.all.select do |t|
+           t.course == course
+            end.map do |t|
+                "#{t.name} - #{t.email}"
+        end
+    end
+
+    def self.all_teachers
+        Teacher.all
+    end
+
+    def self.all_teachers_by_course(course)
+        Teacher.all.select do |t|
+           t.course == course
+        end
+    end
+            
 end
