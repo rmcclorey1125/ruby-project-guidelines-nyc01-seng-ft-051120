@@ -34,5 +34,4 @@ class Teacher < ActiveRecord::Base
     end
 
 
-
 end
