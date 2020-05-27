@@ -21,4 +21,18 @@ class Teacher < ActiveRecord::Base
         end
     end
 
+    def self.search_teacher(teacher_name)
+        Teacher.all.select do |teacher|
+            teacher.name == teacher_name
+        end
+    end
+
+    def self.search_teachers_in_module(mod)
+        Teacher.all.select do |teacher|
+            teacher.module == mod
+        end.count
+    end
+
+
+
 end

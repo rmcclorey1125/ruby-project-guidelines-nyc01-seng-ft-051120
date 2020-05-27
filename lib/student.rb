@@ -40,4 +40,16 @@ class Student < ActiveRecord::Base
     def all_studensts_
     end
 
+    # def self.num_of_students(mod)
+    #     Student.all.select do |student|
+    #         student.module == mod
+    #     end.count
+    # end
+
+    def self.num_of_students(mod, course)
+        Student.all.select do |student|
+            student.module == mod && student.course == course
+        end
+    end
+
 end
