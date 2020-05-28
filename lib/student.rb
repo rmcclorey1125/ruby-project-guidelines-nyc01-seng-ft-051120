@@ -11,24 +11,23 @@ class Student < ActiveRecord::Base
                 my_teachers << b.teacher
                 end
         end
-        my_teachers.map do |t|
-            t.name
-        end.uniq.each do |t|
-            puts t
+        my_teachers.uniq.map do |t|
+           puts "#{t.name}"
         end
     end
 
     def self.job_seeking
-        #recruiter
-        Student.all.select do |s|
-            s.module == 5
+        seekers = Student.all.where(module: 5)
+        all = seekers.collect{|s| "#{s.name} - #{s.email}"}
+        all.each do |a|
+            puts a
         end
     end
-
     def self.job_seeking_by_course(course)
-        #recruiter
-        self.job_seeking.select do |s|
+        seekers = Student.all.where(module: 5)
+        cour = seekers.select do |s|
             s.course == course
+            puts "#{s.name} - #{s.email}"
         end
     end
 
@@ -56,7 +55,7 @@ class Student < ActiveRecord::Base
     end
 
     def self.num_of_students(mod, course)
-        #teacher
+        #teacher - DONE
         #headmaster
         v = Student.all.select do |student|
             student.module == mod && student.course == course
@@ -72,5 +71,12 @@ class Student < ActiveRecord::Base
         end.map do |a|
             puts "#{a.name} - #{a.email}"
         end
+    end
+
+    def self.delete_student_from_database_by_name(name)
+       a = Student.find_by(name: name)
+        a.delete
+        a.save
+        puts "Student #{name} has been deleted from the database."
     end
 end
