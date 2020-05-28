@@ -73,4 +73,13 @@ class Student < ActiveRecord::Base
             puts "#{a.name} - #{a.email}"
         end
     end
+
+    def update_email
+        Student.all.select do |name|
+            name.name == self
+        end
+    end
+
+
+
 end

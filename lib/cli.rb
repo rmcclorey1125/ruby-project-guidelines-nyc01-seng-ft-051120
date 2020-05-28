@@ -27,6 +27,14 @@ def who_am_i
         answer == 2
         puts "What is your name?"
         teacher_name = gets.chomp
+    elsif
+        answer == 3
+
+    elsif
+        answer == 4
+        prospective_student
+    else
+
     end
 end
 
@@ -61,5 +69,55 @@ def student(student_name)
     end
 end
 
+def prospective_student
+    prompt = TTY::Prompt.new
+    answer = prompt.select("Hello, what would you like learn about today?") do |menu|
+        menu.choice 'Who are all the teachers at Flatiron School and thier contact information?', 1
+        menu.choice 'How long has each teacher been teaching?', 2
+        menu.choice 'How many students are in a course and module?', 3
+        menu.choice 'Go back to main menu.', 4
+    end
+    puts = answer
+    if answer == 1
+        Teacher.all_teachers
+    elsif
+        answer == 2
+        Teacher.all_teachers_and_experience
+    elsif
+        answer == 3
+        puts "What course are you interested in?"
+        course = gets.chomp
+        puts "What module are you interested in?"
+        mod = gets.chomp
+        Student.num_of_students(mod, course)
+    elsif
+        answer == 4
+        who_am_i
+    end
+end
 
 end
+
+# def num_of_students
+#     prompt = TTY::Prompt.new
+#     answer = prompt.select("Which course are you interested in?") do |menu|
+#         Data Science, UI/UX Experience, Software Engineer
+#         menu.choice 'Data Science', 1
+#         menu.choice 'UI/UX Experience', 2
+#         menu.choice 'Software Engineer', 3
+#         menu.choice 'Go back to main menu.', 4
+#     end
+#     puts = answer
+#     if answer == 1
+
+#     elsif
+#         answer == 2
+
+#     elsif
+#         answer == 3
+
+#     elsif
+#         answer == 4
+
+#     end
+# end

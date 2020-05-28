@@ -47,13 +47,19 @@ class Teacher < ActiveRecord::Base
         end
     end
 
-    def self.all_teachers
+    def self.all_teachers_and_email
         #student - ronan
         #teacher
         #prospectivestudent
         #headmaster
         Teacher.all.map do |t|
-            puts t.name
+            puts "#{t.name} - #{t.email}."
+        end
+    end
+
+    def self.all_teachers_and_experience
+        Teacher.all.map do |t|
+            puts "#{t.name} has been teaching for #{t.experience} years."
         end
     end
 
