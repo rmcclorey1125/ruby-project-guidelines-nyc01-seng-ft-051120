@@ -1,3 +1,4 @@
+require 'pry'
 class Student < ActiveRecord::Base
    
     has_many :teachers, through: :bootcamp
@@ -23,23 +24,30 @@ class Student < ActiveRecord::Base
             puts a
         end
     end
+
     def self.job_seeking_by_course(course)
+        jobse = []
         seekers = Student.all.where(module: 5)
-        cour = seekers.select do |s|
-            s.course == course
-            puts "#{s.name} - #{s.email}"
+        seekers.select do |s|
+            if s.course == course
+                jobse << s
+            end
+        end
+        jobse.collect do |j|
+            puts "#{j.name} - #{j.email}"
         end
     end
 
     def finish_coding_project
         #DONE
         if self.module == 5
-            "Congratulations, you've graduated from Bootcamp!"
+        puts "Congratulations, you've graduated from Bootcamp!"
         else
             self.module += 1
             self.save
+            puts "Your module has been updated to Module ##{self.module}."
         end
-        puts "Your module has been updated to Module ##{self.module}."
+        
     end
     
 

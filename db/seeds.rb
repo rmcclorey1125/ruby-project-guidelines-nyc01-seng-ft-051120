@@ -2,9 +2,9 @@ Student.delete_all
 Teacher.delete_all
 Bootcamp.delete_all
 
-student1 = Student.create(name: "Christa", age: 22, gender: "Female", email: "crgammage@gmail.com", module: 1, course: "Software Engineering")
-student2 = Student.create(name: "Ronan", age: 29, gender: "Male", email: "ronan@gmail.com", module: 2, course: "Data Science")
-student3 = Student.create(name: "Aleksandra", age: 27, gender: "Female", email: "aleksandra@gmail.com", module: 3, course: "UI/UX Experience")
+student1 = Student.create(name: "Christa", age: 22, gender: "Female", email: "crgammage@gmail.com", module: 5, course: "Software Engineering")
+student2 = Student.create(name: "Ronan", age: 29, gender: "Male", email: "ronan@gmail.com", module: 5, course: "Data Science")
+student3 = Student.create(name: "Aleksandra", age: 27, gender: "Female", email: "aleksandra@gmail.com", module: 5, course: "UI/UX Experience")
 student4 = Student.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "Data Science")
 student5 = Student.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "UI/UX Experience")
 student6 = Student.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "Software Engineering")
@@ -18,7 +18,7 @@ student10 = Student.create(name: Faker::Name.name, age: Faker::Number.within(ran
 teacher1 = Teacher.create(name: "Tashawn", age: 30, gender: "Male", email: "tashawn@flatironschool.com", module: 1, course: "Software Engineering", experience: 2)
 teacher2 = Teacher.create(name: "Yoan", age: 32, gender: "Male", email: "yoan@flatironschool.com", module: 2, course: "Data Science", experience: 4)
 teacher3 = Teacher.create(name: "Sean", age: 31, gender: "Male", email: "sean@flatironschool.com", module: 3, course: "UI/UX Experience", experience: 10)
-teacher4 = Teacher.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "Data Science", experience: Faker::Number.within(range: 1..20))
+teacher4 = Teacher.create(name: "Bob", age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "Data Science", experience: Faker::Number.within(range: 1..20))
 teacher5 = Teacher.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "Software Engineering", experience: Faker::Number.within(range: 1..20))
 teacher6 = Teacher.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "UI/UX Experience", experience: Faker::Number.within(range: 1..20))
 teacher7 = Teacher.create(name: Faker::Name.name, age: Faker::Number.within(range: 18..70), gender: Faker::Gender.binary_type , email: Faker::Internet.email, module: Faker::Number.within(range: 1..5), course: "Data Science", experience: Faker::Number.within(range: 1..20))
